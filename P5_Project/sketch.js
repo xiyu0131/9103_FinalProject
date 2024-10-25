@@ -21,7 +21,7 @@ class lineGroup {
     stroke(this.color);
     strokeWeight(this.strokeWeight);
 
- 
+    //This for-loop calculates the distance between 
     for (let i = 0; i < this.numLines; i++) {
       
       let offsetX = cos(this.angle) * this.lineSpacing * i;
@@ -41,23 +41,7 @@ let colorTop;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background(255);
-  /*let baseLayerStartX=0.3*width;
-  let baseLayerStartY=0.8*height;
-  let baseLayerEndX=0.7*width;
-  let baseLayerEndY=0.2*height;
-  let baseLayerAngle=-radians(PI/3);
-
-
-  groups.push(new lineGroup(baseLayerStartX, baseLayerStartY, baseLayerEndX, baseLayerEndY,baseLayerAngle, random(20), random(100,200),20,3));
-
-
-
-  groups.push(new lineGroup(600, 50, 100, 400, radians(80), 13, color(200,200,0),1, 5));  
-  */
-  //groups.push(new lineGroup(100, 100, 400, 100, radians(0), 1, color(0),100, 5));   
-  //groups.push(new lineGroup(200, 200, 500, 300, -radians(30), 15, color(0),20,1));   
-  //groups.push(new lineGroup(150, 500, 450, 200, -radians(0), 20, color(150),10, 3));  
+  background(255);  
 
   drawLineGroups();
   colorMiddle = color(random(145,188), 145, 188);
@@ -112,7 +96,7 @@ function drawLineGroups() {
   groups.push(new lineGroup(baseLayer1StartX, baseLayer1StartY, baseLayer1EndX, baseLayer1EndY, baseLayer1Angle, 3, colorBase, 10, 3));
   groups.push(new lineGroup(baseLayer2StartX, baseLayer2StartY, baseLayer2EndX, baseLayer2EndY, baseLayer2Angle, 3, colorBase, 10, 3));
   groups.push(new lineGroup(baseLayer3StartX, baseLayer3StartY, baseLayer3EndX, baseLayer3EndY, baseLayer3Angle, 10, colorBase, 5, 3));
-  //groups.push(new lineGroup(600, 50, 100, 400, radians(80), 13, color(200, 200, 0), 1, 5));
+
 
 }
 
@@ -169,8 +153,7 @@ function drawTopLayer(){
 
 
 function windowResized() {
-  // Adjust canvas size and redraw the shape when the window is resized
+  // Adjust canvas size and redraw the shape when the window is resized.
   resizeCanvas(windowWidth, windowHeight);
   drawLineGroups();
-  drawMiddleLayer();
 }
