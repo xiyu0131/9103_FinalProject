@@ -63,11 +63,13 @@ function setup() {
 
 
 function draw() {
+
+  //Drawing base layer.
   for (let group of groups) {
     group.draw();
   }
 
-
+  //Drawing rectangle as middle layer.
   let middleLayerX=0.45*windowWidth;
   let middleLayerY=0.061*windowHeight;
   let middleLayerWidth=0.211*windowWidth;
@@ -75,6 +77,32 @@ function draw() {
 
   fill(0);
   rect(middleLayerX,middleLayerY,middleLayerWidth,middleLayerHeight);
+
+  //Drawing top layer.
+  let topLayer1X1=0.398*windowWidth;
+  let topLayer1X2=0.166*windowWidth;
+  let topLayer1X3=0.398*windowWidth;
+  let topLayer1Y1=0.505*windowHeight;
+  let topLayer1Y2=0.711*windowHeight;
+  let topLayer1Y3=0.919*windowHeight;
+
+  fill(0,200,100);
+  triangle(topLayer1X1,topLayer1Y1,topLayer1X2,topLayer1Y2,topLayer1X3,topLayer1Y3);
+
+  let topLayer2X1=0.558*windowWidth;
+  let topLayer2X2=0.585*windowWidth;
+  let topLayer2X3=0.558*windowWidth;
+  let topLayer2X4=0.636*windowWidth;
+  let topLayer2Y1=0.308*windowHeight;
+  let topLayer2Y2=0.283*windowHeight;
+  let topLayer2Y3=0.425*windowHeight;
+  let topLayer2Y4=0.357*windowHeight;
+
+  fill(0,200,100);
+  quad(topLayer2X1,topLayer2Y1,topLayer2X2,topLayer2Y2,topLayer2X4,topLayer2Y4,topLayer2X3,topLayer2Y3);
+
+
+
 }
 
 function drawLineGroups() {
