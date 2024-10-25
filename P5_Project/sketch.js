@@ -70,7 +70,7 @@ function draw() {
   }
 
   //Drawing rectangle as middle layer.
-  let middleLayerX=0.45*windowWidth;
+  let middleLayerX=0.38*windowWidth;
   let middleLayerY=0.061*windowHeight;
   let middleLayerWidth=0.211*windowWidth;
   let middleLayerHeight=0.885*windowHeight;
@@ -100,6 +100,18 @@ function draw() {
 
   fill(0,200,100);
   quad(topLayer2X1,topLayer2Y1,topLayer2X2,topLayer2Y2,topLayer2X4,topLayer2Y4,topLayer2X3,topLayer2Y3);
+
+  let topLayer3X1=0.558*windowWidth;
+  let topLayer3X2=0.558*windowWidth;
+  let topLayer3X3=0.725*windowWidth;
+  let topLayer3X4=0.666*windowWidth;
+  let topLayer3Y1=0.5*windowHeight;
+  let topLayer3Y2=0.643*windowHeight;
+  let topLayer3Y3=0.494*windowHeight;
+  let topLayer3Y4=0.403*windowHeight;
+
+  fill(0,200,100);
+  quad(topLayer3X1,topLayer3Y1,topLayer3X2,topLayer3Y2,topLayer3X3,topLayer3Y3, topLayer3X4,topLayer3Y4);
 
 
 
