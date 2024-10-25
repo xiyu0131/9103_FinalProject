@@ -66,7 +66,15 @@ function draw() {
   for (let group of groups) {
     group.draw();
   }
-  
+
+
+  let middleLayerX=0.45*windowWidth;
+  let middleLayerY=0.061*windowHeight;
+  let middleLayerWidth=0.211*windowWidth;
+  let middleLayerHeight=0.885*windowHeight;
+
+  fill(0);
+  rect(middleLayerX,middleLayerY,middleLayerWidth,middleLayerHeight);
 }
 
 function drawLineGroups() {
@@ -92,10 +100,16 @@ function drawLineGroups() {
   let baseLayer3Angle = PI / 6.78; 
 
 
+    
+
+
+
+
   groups.push(new lineGroup(baseLayer1StartX, baseLayer1StartY, baseLayer1EndX, baseLayer1EndY, baseLayer1Angle, 3, color(100,0,200), 10, 3));
   groups.push(new lineGroup(baseLayer2StartX, baseLayer2StartY, baseLayer2EndX, baseLayer2EndY, baseLayer2Angle, 3, color(100,0,200), 10, 3));
   groups.push(new lineGroup(baseLayer3StartX, baseLayer3StartY, baseLayer3EndX, baseLayer3EndY, baseLayer3Angle, 6, color(100,0,200), 5, 3));
   //groups.push(new lineGroup(600, 50, 100, 400, radians(80), 13, color(200, 200, 0), 1, 5));
+
 }
 
 function windowResized() {
