@@ -2,7 +2,7 @@
 
 
 //This class draws groups of lines using a class.
-//In this class, the startX, startY, endX, endY, angle, numLines, color, space, strokeWeight
+//In this class, the start points'X location, start points'Y location, end points'X location, end points'Y location, angle, number of lines in each group, color, space, strokeWeight
 //are used as parameters.
 class lineGroup {
   constructor(startX, startY, endX, endY, angle, numLines, color, space, strokeWeight) {
@@ -18,15 +18,16 @@ class lineGroup {
   }
 
   draw() {
-    stroke(this.color);
-    strokeWeight(this.strokeWeight);
+    stroke(this.color); // Set the color of the lines.
+    strokeWeight(this.strokeWeight); // Set the line thickness.
 
-    //This for-loop calculates the distance between 
+    // Draw each line in the group at an offset based on line spacing and angle.
     for (let i = 0; i < this.numLines; i++) {
-      
+      // Calculate horizontal and vertical offsets for each line.
       let offsetX = cos(this.angle) * this.lineSpacing * i;
       let offsetY = sin(this.angle) * this.lineSpacing * i;
 
+      // Draw the line with the calculated offsets.
       line(this.startX + offsetX, this.startY + offsetY, this.endX + offsetX, this.endY + offsetY);
     }
   }
@@ -34,32 +35,33 @@ class lineGroup {
 
 //Storing the line groups into an array.
 let groups = [];
-let colorMiddle;
-let colorTop;
+let colorMiddle; // Color for the middle layer.
+let colorTop; // Color for the top layer.
+
 
 
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
-  background(255);  
+  createCanvas(windowWidth, windowHeight);// Set canvas to full window size.
+  background(255);  // Set background to white.
 
-  drawLineGroups();
-  colorMiddle = color(random(145,188), 145, 188);
-  colorTop = color(random(188,255), 188, 255);
+  drawLineGroups();// Draw the initial set of line groups.
+  colorMiddle = color(random(145,188), 145, 188);// Define color for the middle layer.
+  colorTop = color(random(188,255), 188, 255);// Define color for the top layer.
 
 }
 
 
 function draw() {
 
-  //Drawing base layer.
+  // Draw all base layer line groups stored in the groups array.
   for (let group of groups) {
     group.draw();
   }
 
-  drawMiddleLayer();
+  drawMiddleLayer();// Draw the middle layer.
 
-  drawTopLayer();
+  drawTopLayer();// Draw the top layer.
 
 
 
@@ -69,6 +71,7 @@ function drawLineGroups() {
   // Clear existing groups when resizing
   groups = [];
   
+   // Define properties for each line group in the base layer.
   let baseLayer1StartX = 0.15 * windowWidth;
   let baseLayer1StartY = 0.75 * windowHeight;
   let baseLayer1EndX = 0.544 * windowWidth;
@@ -87,12 +90,12 @@ function drawLineGroups() {
   let baseLayer3EndY = 0.285 * windowHeight;
   let baseLayer3Angle = PI / 6.78; 
 
-
+  // Set a random color for the base layer.
   let colorBase = color(random(98,126), 98, 126);
 
 
 
-
+  // Add new line groups to the groups array with specified properties.
   groups.push(new lineGroup(baseLayer1StartX, baseLayer1StartY, baseLayer1EndX, baseLayer1EndY, baseLayer1Angle, 3, colorBase, 10, 3));
   groups.push(new lineGroup(baseLayer2StartX, baseLayer2StartY, baseLayer2EndX, baseLayer2EndY, baseLayer2Angle, 3, colorBase, 10, 3));
   groups.push(new lineGroup(baseLayer3StartX, baseLayer3StartY, baseLayer3EndX, baseLayer3EndY, baseLayer3Angle, 10, colorBase, 5, 3));
@@ -101,7 +104,7 @@ function drawLineGroups() {
 }
 
 function drawMiddleLayer() {
-  //Drawing rectangle as middle layer.
+   // Draw a rectangle as the middle layer in the specified location and size.
   let middleLayerX=0.38*windowWidth;
   let middleLayerY=0.061*windowHeight;
   let middleLayerWidth=0.211*windowWidth;
@@ -114,7 +117,7 @@ function drawMiddleLayer() {
 }
 
 function drawTopLayer(){
-  //Drawing top layer.
+  // Draw a triangle as part of the top layer.
   let topLayer1X1=0.398*windowWidth;
   let topLayer1X2=0.166*windowWidth;
   let topLayer1X3=0.398*windowWidth;
@@ -125,6 +128,7 @@ function drawTopLayer(){
   fill(colorTop);
   triangle(topLayer1X1,topLayer1Y1,topLayer1X2,topLayer1Y2,topLayer1X3,topLayer1Y3);
 
+  // Draw first quadrilateral as part of the top layer.
   let topLayer2X1=0.558*windowWidth;
   let topLayer2X2=0.585*windowWidth;
   let topLayer2X3=0.558*windowWidth;
@@ -137,6 +141,7 @@ function drawTopLayer(){
   fill(colorTop);
   quad(topLayer2X1,topLayer2Y1,topLayer2X2,topLayer2Y2,topLayer2X4,topLayer2Y4,topLayer2X3,topLayer2Y3);
 
+  // Draw second quadrilateral as part of the top layer.
   let topLayer3X1=0.558*windowWidth;
   let topLayer3X2=0.558*windowWidth;
   let topLayer3X3=0.725*windowWidth;
