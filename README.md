@@ -1,6 +1,6 @@
 # 9103_FinalProject
  creating prototype for selected artwork "untitled"
-
+![An image of the original artwork "Untitled"](image/untitled.jpg)
 
 ## Instruction
 
