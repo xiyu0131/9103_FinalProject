@@ -2,10 +2,16 @@
  creating prototype for selected artwork "untitled"
 
 
-## Inspirations
+## Instruction
 
-When looking at this artwork, at first, i was thinking about drawing parallelgrams. And then i realized the similarity between this artwork and the product codes, which are made of straight lines. 
+This prototype is made of three layers:
+    baselayer: groups of lines
+    middlelayer: a rectangle 
+    toplayer: a triangle and two quadrilaterals
+The location of the elements are proportional to the screensize.
+When the user resize the screen, the prototype will follow the changes and resize itself.
+When the user refresh the page, the color of the elements will change slightly.
 
-Since all the lines in this artwork are parallel, except for several gray lines, I could make a class for the basic line in each group, setting its angle, start point and end points. And i can use for loops to pile lines together, to form parallelgrams. In this way, the shape and color of different sections can be manipulated more precises, adding details to the representation of this artwork.
 
-I decided to give this method a try.
+
+
